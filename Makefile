@@ -12,3 +12,8 @@ minify:
 expand:
 	docker compose exec python-app poetry run python url_shortener.py --expand $(url)
 
+
+.PHONY: test
+test:
+	docker compose exec python-app poetry run pytest -v
+
