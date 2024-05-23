@@ -14,7 +14,7 @@ def connect_to_mongodb():
 def generate_shortcode(length):
     # Generate MD5 hash of the URL
     characters = "abcdefghijklmnopqrstuv-+wxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    random_string = ''.join(random.choice(characters) for _ in range(length))
+    random_string = "".join(random.choice(characters) for _ in range(length))
     return random_string
 
 
@@ -22,7 +22,7 @@ def expand_url(shortcode):
     collection = connect_to_mongodb()
     url_data = collection.find_one({"shortcode": shortcode})
     if url_data:
-        if url_data['expiration_timestamp'] > time.time():
+        if url_data["expiration_timestamp"] > time.time():
             return url_data['url']
         else:
             return "Shortened URL has expired."
@@ -68,7 +68,7 @@ def main():
     args = parser.parse_args()
 
     if not args.minify and not args.expand:
-        print('Please provide required arguments. make help for more info')
+        print("Please provide required arguments. make help for more info")
         return
 
     if args.minify and is_valid_url(args.minify):
