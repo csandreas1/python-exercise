@@ -18,3 +18,8 @@ make minify url=https://example.com/path?q=search1233
 ```shell
 make expand url=https://py.sh/scjFmOU
 ```
+
+### Test
+```shell
+make test
+```
