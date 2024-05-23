@@ -9,6 +9,7 @@ packages = [{include = "python_exercise"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pymongo = "^4.7.2"
+pytest = "^8.2.1"
 
 
 [build-system]
